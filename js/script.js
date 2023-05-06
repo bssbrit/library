@@ -62,3 +62,15 @@ newBook.addEventListener("click", function () {
   checkBox.setAttribute("id", "checkBox");
   formulario.appendChild(checkBox);
 });
+
+//object constructor
+
+const book = function (titulo, autor, numeroPaginas, check) {
+  this.titulo = titulo;
+  this.autor = autor;
+  this.pages = numeroPaginas;
+  this.check = check;
+};
+
+let livro = new book("ola", "bruno", 360, "sim");
+console.log(livro);

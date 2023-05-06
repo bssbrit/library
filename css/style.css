@@ -92,10 +92,9 @@ h1 {
   flex: 2;
   margin: ;
   border: solid 1px black;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 5px;
 }
 .book {
   border-radius: 4%;
@@ -105,9 +104,15 @@ h1 {
   flex-direction: column;
   height: 30vh;
   width: 15vw;
-  padding: 5px;
+  margin: 5px;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  gap: 1vh;
+}
+.book p {
+  margin-bottom: 0;
+  margin-top: 5px;
 }
 
 #formulario {
