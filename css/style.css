@@ -107,7 +107,7 @@ h1 {
   margin: 5px;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  overflow: auto;
   gap: 1vh;
 }
 .book p {
@@ -136,4 +136,13 @@ h1 {
 #formulario h4 {
   color: White;
   font-size: 40px;
+}
+
+#confirm {
+  border: none;
+}
+
+#confirm:hover {
+  background-color: black;
+  color: white;
 }
