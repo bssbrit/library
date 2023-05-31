@@ -5,6 +5,7 @@ body {
   justify-content: center;
   margin: 0;
   height: 100vh;
+  background-color: #164e63;
 }
 .container {
   height: 100%;
@@ -91,7 +92,7 @@ h1 {
   width: 100%;
   flex: 2;
   margin: ;
-  border: solid 1px black;
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 5px;
@@ -108,7 +109,8 @@ h1 {
   justify-content: center;
   align-items: center;
   overflow: auto;
-  gap: 1vh;
+
+  flex: 1;
 }
 .book p {
   margin-bottom: 0;
