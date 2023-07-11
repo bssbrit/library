@@ -80,13 +80,12 @@ newBook.addEventListener("click", function () {
 let index = 0
 */
 //object constructor
-let index = 0;
+
 const book = function (titulo, autor, paginas, check) {
   this.titulo = titulo;
   this.autor = autor;
   this.pages = paginas;
   this.check = check;
-  this.index = index + 1;
 };
 
 //function addBookToLibrary() {
@@ -133,13 +132,17 @@ function displayBook() {
     bookDisplay.appendChild(checkMark);
     console.log(biblioteca[i]);
     console.log(biblioteca);
-
+    console.log(i);
     let index = i;
     deleteBtn.addEventListener("click", function () {
       pratileira.removeChild(bookDisplay);
       console.log(biblioteca[index]);
       let x = biblioteca.splice(index, index);
       console.log(biblioteca);
+      console.log(index);
+      if (biblioteca.length == 1) {
+        biblioteca.shift();
+      }
     });
   }
 }
