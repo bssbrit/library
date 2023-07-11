@@ -75,14 +75,18 @@ newBook.addEventListener("click", function () {
 
   formulario.appendChild(btnConfirmar);
 });
+/*
 
+let index = 0
+*/
 //object constructor
-
+let index = 0;
 const book = function (titulo, autor, paginas, check) {
   this.titulo = titulo;
   this.autor = autor;
   this.pages = paginas;
   this.check = check;
+  this.index = index + 1;
 };
 
 //function addBookToLibrary() {
@@ -111,10 +115,10 @@ function displayBook() {
     const autorDisplay = document.createElement("p");
     const tituloDisplay = document.createElement("h4");
     const paginasDisplay = document.createElement("p");
-    const deleteBtn = document.createElement("button");
+    let deleteBtn = document.createElement("button");
     const checkMark = document.createElement("input");
     checkMark.setAttribute("type", "checkbox");
-
+    console.log(biblioteca[i].index);
     tituloDisplay.textContent = biblioteca[i].titulo;
     autorDisplay.textContent = biblioteca[i].autor;
     paginasDisplay.textContent = biblioteca[i].pages;
@@ -124,20 +128,21 @@ function displayBook() {
     bookDisplay.appendChild(tituloDisplay);
     bookDisplay.appendChild(autorDisplay);
     bookDisplay.appendChild(paginasDisplay);
-    /*if (biblioteca[i].check == "on") {
-      checkMark.value = "on"; ---------------FAZER ISSO ----------
-    }*/
+
     bookDisplay.appendChild(deleteBtn);
     bookDisplay.appendChild(checkMark);
     console.log(biblioteca[i]);
-    console.log(deleteBtn);
+    console.log(biblioteca);
+
+    let index = i;
     deleteBtn.addEventListener("click", function () {
       pratileira.removeChild(bookDisplay);
+      console.log(biblioteca[index]);
+      let x = biblioteca.splice(index, index);
+      console.log(biblioteca);
     });
   }
 }
-
-//botão
 
 //btn confirmar click event
 
@@ -147,59 +152,3 @@ btnConfirmar.addEventListener("click", function () {
   document.body.removeChild(formulario);
   displayBook();
 });
-
-//-------------------- For loop pelo array (biblioteca) que ira realizar o display
-
-/*
-  btnConfirmar.addEventListener("click", function () {
-    console.log("hi");
-    let teste = document.createElement("p");
-    teste.textContent = "testando";
-
-    let container = document.querySelector(".container");
-    container.appendChild(teste);
-  });
-*/
-
-/*newBook.addEventListener("click", function () {
-  //criar element form
-  const formulario = document.createElement("FORM");
-  formulario.setAttribute("id", "formulario");
-  document.body.appendChild(formulario);
-  //h4
-  const novoLivro = document.createElement("h4");
-  novoLivro.textContent = "Novo Livro";
-  formulario.appendChild(novoLivro);
-  //autor
-  const autor = document.createElement("input");
-  autor.setAttribute("id", "autor");
-  autor.setAttribute("type", "text");
-  autor.setAttribute("placeholder", "Autor");
-  formulario.appendChild(autor);
-
-  //input titulo
-  const titulo = document.createElement("input");
-  titulo.setAttribute("id", "titulo");
-  titulo.setAttribute("type", "text");
-  titulo.setAttribute("placeholder", "Titulo");
-  formulario.appendChild(titulo);
-
-  //input número de pg
-  const paginas = document.createElement("input");
-  paginas.setAttribute("id", "paginas");
-  paginas.setAttribute("type", "number");
-  paginas.setAttribute("placeholder", "Número de Páginas");
-  formulario.appendChild(paginas);
-
-  //input checkBox leu ou nãoi
-  const label = document.createElement("label");
-  label.setAttribute("for", "checkBox");
-  label.textContent = "Você ja leu o livro?";
-  formulario.appendChild(label);
-  const checkBox = document.createElement("input");
-  checkBox.setAttribute("type", "checkbox");
-  checkBox.setAttribute("id", "checkBox");
-  formulario.appendChild(checkBox);
-});
-
-*/
