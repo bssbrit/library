@@ -75,19 +75,26 @@ newBook.addEventListener("click", function () {
 
   formulario.appendChild(btnConfirmar);
 });
-/*
 
-let index = 0
-*/
 //object constructor
-
+//let index = -1;
 const book = function (titulo, autor, paginas, check) {
   this.titulo = titulo;
   this.autor = autor;
   this.pages = paginas;
   this.check = check;
+  //index += 1;
+  //this.index = index;
 };
+/*
+let livreta = new book("LOTR", "TOLKIEN", "350", true);
+let livreta2 = new book("LOTR", "TOLKIEN", "350", true);
+let livreta3 = new book("LOTR", "TOLKIEN", "350", true);
+console.log(livreta.index);
 
+console.log(livreta2.index);
+console.log(livreta3.index);
+*/
 //function addBookToLibrary() {
 function addBookToBiblioteca() {
   let livro = new book(
@@ -103,7 +110,6 @@ function addBookToBiblioteca() {
 //variavel pratileira
 let pratileira = document.getElementById("pratileira");
 
-console.log(pratileira);
 function displayBook() {
   //declarar variaveis dos elementos do book
   pratileira.innerHTML = "";
@@ -137,7 +143,7 @@ function displayBook() {
     deleteBtn.addEventListener("click", function () {
       pratileira.removeChild(bookDisplay);
       console.log(biblioteca[index]);
-      let x = biblioteca.splice(index, index);
+      biblioteca.splice(index, 1);
       console.log(biblioteca);
       console.log(index);
       if (biblioteca.length == 1) {
